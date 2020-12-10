@@ -1,0 +1,166 @@
+*{
+	box-sizing: border-box;
+}
+header{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+header .logo{
+	position: relative;
+	max-width: 80px;
+}
+
+
+header ul{
+	display: flex;
+	position: relative;
+}
+
+header ul li{
+	list-style: none;
+	text-decoration: none;
+}
+
+header ul li a{
+	display: inline-block;
+	color: black;
+	font-weight: 400;
+	margin-left: 40px;
+	text-decoration: none;
+}
+
+
+main{
+	height: 87vh;
+	background: #EBEBEB;
+}
+
+hr{
+	background: #E1E1E1;
+}
+
+.watch-model{
+	position: relative;
+	top: 280px;
+	left: 25px;
+}
+
+.watch-model img{
+	cursor: pointer;
+	transition: 0.5s
+}
+
+.watch-model img:hover{
+	transform: translateX(25px);
+}
+
+.preview img{
+	position: relative;
+	top: 170px;
+	left: 90px;
+}
+
+.parameter{
+	padding-top: 150px;
+}
+
+.parameter h6{
+	font-size: 2em;
+	font-weight: 400px;
+	letter-spacing: 5px;
+}
+
+.parameter h1{
+	font-weight: 700;
+	letter-spacing: 5px;
+	margin-top: -20px;
+}
+
+.parameter p{
+	color: #A8A8A8;
+}
+
+.parameter h5{
+	letter-spacing: 4px;
+	font-weight: 700px;
+	margin-top: 20px;
+}
+
+.parameter h5 span{
+	letter-spacing: 0;
+	color: #A8A8A8;
+	font-size: 0.8em;
+}
+
+.parameter h2{
+	font-weight: 700;
+	font-size: 3em;
+}
+
+.parameter h2 span{
+	font-weight: 400;
+	font-size: 0.8em;
+}
+
+.cart{
+	margin-top: 20px;
+}
+
+.cart button{
+	padding: 15px 20px;
+	color: white;
+	border-radius: 0px;
+	margin-left: 10px;
+}
+
+.cart button:first-of-type{
+	padding: 15px 100px;
+	background: lightgrey;
+	color: white;
+	border-radius: 15px;
+}
+
+.cart button:first-of-type:hover{
+	background: white;
+	color: black;
+}
+
+#heart{
+	color: white;
+}
+
+#heart:hover{
+	border-radius: 30px;
+	color: pink;
+}
+
+.thumb{
+	position: absolute;
+	left: 10%;
+	bottom: 40px;
+	display: flex;
+}
+
+.thumb{
+	list-style: none;
+	display: flex;
+	margin: 0px 20px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.thumb li{
+	padding-left: 20px;
+}
+
+#text{
+	bottom: 50px;
+	position:
+
+}

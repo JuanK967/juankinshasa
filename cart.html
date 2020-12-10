@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Shopping Cart | Throne Watches</title>
+        <link rel="stylesheet" href="css/cartStyle.css" media="screen" title="no title" charset="utf-8">
+		<script src="https://kit.fontawesome.com/17a20a2484.js" crossorigin="anonymous"></script>
+
+
+    </head>
+    <body onload='inputReset()'>
+		<header>
+			<a href="#"> <img src="Imgs/pocket-watch.png" alt="logo" class="logo"></a>
+			<ul>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/watches.htm#">Home</a> </li>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/productPage.htm">Products</a> </li>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/contactUS.htm">Contact</a> </li>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/cart.html"> <span> <i class="fas fa-shopping-cart"></i> </span> </a> </li>
+			</ul>
+		</header>
+        <div class="shopping-cart">
+        <!-- Title -->
+        <div class="title">
+          Shopping Bag
+        </div>
+
+        <!-- Product #1 -->
+        <div class="item">
+          <div class="buttons">
+            <span class="delete-btn"></span>
+            <span class="like-btn"></span>
+          </div>
+
+          <div class="image">
+            <img src="Imgs/carpenterWatch.png" alt="" />
+          </div>
+
+          <div class="description">
+            <span>Carpenter Watch</span>
+            <span>$1,250.00</span>
+            <span>48mm Band</span>
+          </div>
+
+          <div class="quantity">
+            <p>Quantity</p>
+        <input type="number" min="0" onchange="calculateSubTotal()" id="item-1" value="0">
+
+          </div>
+
+          <div class="total-price">$1,250 per</div>
+        </div>
+
+        <!-- Product #2 -->
+        <div class="item">
+          <div class="buttons">
+            <span class="delete-btn"></span>
+            <span class="like-btn"></span>
+          </div>
+
+          <div class="image">
+            <img src="Imgs/throneWhiteFaceLayed.png" alt=""/>
+          </div>
+
+          <div class="description">
+            <span>Standard Baggo</span>
+            <span>$1,150.00</span>
+            <span>48mm Band</span>
+          </div>
+
+          <div class="quantity">
+            <p>Quantity</p>
+            <input type="number" min="0" onchange="calculateSubTotal()" id="item-2" value="0">
+          </div>
+
+          <div class="total-price">$1,150 per</div>
+        </div>
+
+        <!-- Product #3 -->
+        <div class="item">
+          <div class="buttons">
+            <span class="delete-btn"></span>
+            <span class="like-btn"></span>
+          </div>
+
+          <div class="image">
+            <img src="Imgs/throneSilverWatch.png" alt="" />
+          </div>
+
+          <div class="description">
+            <span>Standard Baggo</span>
+            <span>$875.00</span>
+            <span>48mm Band</span>
+          </div>
+
+          <div class="quantity">
+            <p>Quantity</p>
+          <input type="number" min="0" onchange="calculateSubTotal()" id="item-3" value="0">
+
+          </div>
+
+          <div class="total-price">$875 per</div>
+        </div>
+        <div class="checkoutContainer">
+            <button id="bt-1" type="button" onclick="calculateSalesTax()"name="button">Calculate Taxes</button>
+            <button id="bt-2" type="button" onclick="calculateShipping()"name="button">Calculate Shipping</button>
+            <p id="subTotal">$0.00</p>
+            <p id="salesTax">$0.00</p>
+            <p id="shipping">$0.00</p>
+            <p id="gTotal">$0.00</p>
+            <button id="bt-3" type="button" disabled="true" onclick="checkout()"name="button">Checkout</button>
+        </div>
+      </div>
+
+
+    </body>
+    <script>
+        var subTotal =0.0;
+        var a;
+        var b;
+        var taxes=0.0;
+        var shippingCost=0.0;
+
+        function calculateSubTotal()
+        {
+
+                var quantity_1 = parseInt(document.getElementById("item-1").value);
+                var quantity_2 = parseInt(document.getElementById("item-2").value);
+                var quantity_3 = parseInt(document.getElementById("item-3").value);
+                subTotal= quantity_1*1250.00 + quantity_2*1150.00 + quantity_3*875.00;
+                subTotal = subTotal.toFixed(2);
+                document.getElementById("subTotal").innerHTML = "$"+subTotal;
+                //window.alert(quantity_1 + quantity_2 + quantity_3);
+
+
+            //document.getElementsById("item-1");
+        }
+
+        function  calculateSalesTax()
+        {
+            if (subTotal==0) {
+                window.alert("You need to enter a quantity!");
+            }
+            else
+            {
+            var tax_hold = (subTotal*1.06)-subTotal;
+             taxes = tax_hold.toFixed(2);
+            document.getElementById("salesTax").innerHTML = "$"+taxes;
+            document.getElementById("bt-1").disabled = true;
+			x = document.getElementsByTagName("input");
+			for (var i = 0; i < x.length; i++) {
+				x[i].disabled=true;
+            }
+				}
+
+        }
+
+        function calculateShipping()
+        {
+            if (subTotal==0) {
+                window.alert("You need to enter a quantity!");
+                //check whether values have been entered for quantities
+            }
+            else
+            {
+                if (document.getElementById("bt-1").disabled)
+                {   //above statement is to check whether the calculate tax has been pressed
+                    var ship_Cost = (subTotal*1.02)-subTotal;
+                     shippingCost = parseFloat(ship_Cost.toFixed(2));
+                    document.getElementById("shipping").innerHTML = "$"+shippingCost;
+                    //statemnet below sets shipping cost button disabled
+                    document.getElementById("bt-2").disabled = true;
+                    //below statements calculate grand total
+                    var gTotal = parseFloat(shippingCost) + parseFloat(taxes) + parseFloat(subTotal);
+                    document.getElementById("gTotal").innerHTML = "$"+gTotal;
+                    //statement below sets submit button enabled
+                    document.getElementById("bt-3").disabled = false;
+                }
+                else{
+                    window.alert("Calculate both Sales Tax Then Shipping");
+                }
+            }
+        }
+
+        function inputReset()
+        {
+            x = document.getElementsByTagName("input");
+            for (var i = 0; i < x.length; i++) {
+                x[i].value=0;
+            }
+        }
+
+        function checkout()
+        {
+            window.alert("you have checked out");
+        }
+
+
+    </script>
+</html>

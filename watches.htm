@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Home | Throne Watches</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://kit.fontawesome.com/17a20a2484.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<section class="sec">
+		<header>
+			<a href="#"> <img src="Imgs/pocket-watch.png" alt="logo" class="logo"></a>
+			<ul>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/watches.htm#">Home</a> </li>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/productPage.htm">Products</a> </li>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/contactUS.htm">Contact</a> </li>
+				<li> <a href="file:///D:/KSU/Year%201-2020-Fall/TCID%203800%20-%20Front%20End%20II/Throne%20Watches/Throne_web/cart.html"> <span> <i class="fas fa-shopping-cart"></i> </span> </a> </li>
+			</ul>
+		</header>
+		<div class="content">
+			<div class="textBox">
+				<h2>Throne<br><span>Collection</span></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<a href="#">View All Products</a>
+			</div>
+
+			<div class="imgBox">
+				<img src="Imgs/carpenterWatch.png" alt="watch1" class="watch">
+			</div>
+		</div>
+		<ul class="thumb">
+			<li> <img src="Imgs/rush-105.png" alt="" onclick="imgSlider('Imgs/carpenterWatch.png');changeBgColor('#453a13')"> </li>
+			<li> <img src="Imgs/rush-105.png" alt="" onclick="imgSlider('Imgs/throneSilverWatch.png');changeBgColor('#736562')"> </li>
+			<li> <img src="Imgs/rush-105.png" alt="" onclick="imgSlider('Imgs/throneWhiteFaceLayed.png');changeBgColor('#C4C4C4')"> </li>
+		</ul>
+		<ul class="sci">
+			<li> <a href="#"> <i class="fab fa-instagram fa-3x"></i> </a> </li>
+			<li> <a href="#"> <i class="fab fa-twitter fa-3x"></i> </a> </li>
+			<li> <a href="#"> <i class="fab fa-facebook fa-3x"></i> </a> </li>
+		</ul>
+	</section>
+	<script type="text/javascript">
+		function imgSlider(images) {
+			document.querySelector('.watch').src = images;
+		}
+
+		function changeBgColor(color) {
+			var sec = document.querySelector('.sec');
+			sec.style.background = color;
+
+		}
+	</script>
+</body>
+</html>
